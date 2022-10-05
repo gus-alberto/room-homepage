@@ -1,0 +1,23 @@
+@use 'initial';
+@use 'variables';
+@use 'header';
+@use 'hero';
+@use 'mixins';
+@use 'about';
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center; 
+    & a{
+        color: hsl(228, 45%, 44%);
+    }
+}
+.main-container{
+    width: 375px;
+    margin: auto;
+    position: relative;
+    @media (min-width: 1440px){
+        width: 1440px;
+    }
+}

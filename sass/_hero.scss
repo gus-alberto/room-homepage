@@ -1,0 +1,78 @@
+@use 'variables' as v;
+@use 'mixins';
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.hero{
+    @media (min-width: 1440px){
+        display: flex;
+    }
+    &__image{
+        width: 100%;
+        height: 360px;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media (min-width: 1440px){
+            width: 840px;
+            height: 534px;
+        }
+    }
+    &__button--left{
+        @include mixins.slider-btn;
+    }
+    &__button--right{
+        @include mixins.slider-btn;
+    }
+    &__controls-container{
+        display: flex;
+        position: relative;
+        justify-content: end;
+        top: -56px;
+        margin-bottom: -56px;
+        @media (min-width: 1440px){
+            position: relative;
+            top: -80px;
+            left: 160px;
+            justify-content: end;
+            margin-bottom: -80px;
+        }
+    }
+    &__content{
+        padding: 60px 32px;
+        @media (min-width: 1440px){
+            padding: 120px 100px 0 98px;
+        }
+    }
+    &__title{
+        font-weight: 600;
+        font-size: 39px;
+        line-height: 37px;
+        color: v.$Black;
+        margin-bottom: 17px;
+        letter-spacing: -0.025em;
+        @media (min-width: 1440px){
+            font-size: 46px;
+            line-height: 45px;
+            margin-bottom: 23px;
+        }
+    }
+    &__body{
+        @include mixins.body;
+        margin-bottom: 38px;
+        padding-right: 8px;
+        @media (min-width: 1440px){
+            margin-bottom: 27px;
+        }
+    }
+    &__button{
+        @include mixins.button;
+        & img{
+            padding-left: 20px;
+        }
+    }
+}
